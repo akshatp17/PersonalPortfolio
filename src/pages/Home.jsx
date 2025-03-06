@@ -116,11 +116,11 @@ const Home = () => {
                 </div>
 
                 {/* Contact heading */}
-                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300'>
+                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300' id="contactForm">
                     <p className=''>contact</p> <hr className='w-[71.5%]' />
                 </div>
                 {/* Contact Form */}
-                <div className='' id="contactForm">
+                <div className=''>
                     <ContactForm />
                 </div>
             </div >
