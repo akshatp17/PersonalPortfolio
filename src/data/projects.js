@@ -36,7 +36,7 @@ export const projects = [{
     description: "Developed an interactive tic-tac-toe website allowing players to compete with the other players locally",
     domain: 'Web Dev',
     tech: 'Reactjs',
-    thumbnail: '../assets/projects/',
+    thumbnail: '../assets/projects/tictactoe.png',
     github: 'https://github.com/akshatp17/TicTacToe',
     projectLink: 'https://akshatp17.github.io/TicTacToe/'
   },
