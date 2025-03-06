@@ -12,3 +12,19 @@ body{
     background-size: contain;
     border-radius: 100%;
 }
+
+/* This part changes the scrollbar track (the part behind the scrollbar) */
+::-webkit-scrollbar-track {
+    background: #000000; /* Dark grey color, you can choose any color you like */
+  }
+  
+  /* This part changes the scrollbar handle */
+  ::-webkit-scrollbar-thumb {
+    background: #060606; /* Medium grey color, this is the actual scrollbar */
+  }
+  
+  /* You can also change the scrollbar width and height */
+  ::-webkit-scrollbar {
+    width: 12px; /* Width of the vertical scrollbar */
+    height: 12px; /* Height of the horizontal scrollbar */
+  }

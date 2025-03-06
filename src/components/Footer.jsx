@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Get in touch text */}
         <div>
           <p className='text-2xl font-bold'>
-            <span className='text-gray-400'>Get</span> in Touch.
+            Get in Touch.
           </p>
           <p className='text-gray-400'>
             So that we can talk more about...
@@ -19,7 +19,9 @@ const Footer = () => {
         {/* Icons and Links to socials */}
         <div className='flex gap-5 justify-center items-center text-gray-200 my-2 scale-[0.7]'>
           {/* Mail */}
-          <Mail size={30} />
+          <a href="mailto:akshatp0505@gmail.com?subject=Contact Inquiry&body=Hello,">
+            <Mail size={30} />
+          </a>
 
           <Dot />
           {/* Linkedin */}
