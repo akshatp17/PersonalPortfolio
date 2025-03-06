@@ -1,9 +1,9 @@
 import React from 'react'
-import { Mail, Dot } from 'lucide-react'
+import { Mail, Dot, Heart } from 'lucide-react'
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className='pb-3'>
       <hr className='mx-auto my-2 w-[80%] text-gray-400' />
       <div className='text-center'>
         {/* Get in touch text */}
@@ -17,7 +17,7 @@ const Footer = () => {
         </div>
 
         {/* Icons and Links to socials */}
-        <div className='flex gap-5 justify-center items-center text-gray-200 my-3 scale-[0.7]'>
+        <div className='flex gap-5 justify-center items-center text-gray-200 my-2 scale-[0.7]'>
           {/* Mail */}
           <Mail size={30} />
 
@@ -36,6 +36,10 @@ const Footer = () => {
           </div>
         </div>
 
+      </div>
+      <hr className='mx-auto my-2 w-[80%] text-gray-400' />
+      <div className='flex gap-2 items-center justify-center'>
+        Made with ❤️ by Akshat Pratyush
       </div>
     </footer>
   )
