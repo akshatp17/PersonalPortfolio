@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className='flex justify-around py-3 text-md'>
       <div className='text-xl font-bold'>
-        Logo
+        Armyth
       </div>
       <div className='flex gap-5'>
         <button className={` hover:cursor-pointer`}>
