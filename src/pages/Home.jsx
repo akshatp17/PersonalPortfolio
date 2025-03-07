@@ -4,6 +4,7 @@ import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3, FaJs, FaGit, FaGithub, Fa
 import { TbBrandCpp, TbBrandCSharp } from "react-icons/tb";
 import { SiMongodb, SiTailwindcss, SiTypescript, SiExpress } from "react-icons/si";
 import ContactForm from "../components/Contact";
+import ExperienceCard from "../components/ExperienceCard";
 
 const Home = () => {
 
@@ -104,14 +105,16 @@ const Home = () => {
 
                 </div>
 
-                {/* technology heading */}
+                {/* Experience heading */}
                 <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300 px-30'>
                     <p className=''>exprecience</p> <hr className='w-full' />
                 </div>
-                {/* Few Projects Showcase */}
+                {/* Experience Showcase */}
                 <div className='flex flex-col w-80% mx-auto'>
-                    <div className="w-full">
-                        Web Dev:
+                    <div className="w-full flex gap-3">
+                        <ExperienceCard expData={{ num: 12, numContext: "Git Repos" }} />
+                        <ExperienceCard expData={{ num: 5, numContext: "projects" }} />
+                        <ExperienceCard expData={{ num: 20, numContext: "hours on dev" }} />
                     </div>
                 </div>
 
