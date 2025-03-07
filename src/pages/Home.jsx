@@ -119,7 +119,7 @@ const Home = () => {
                 </div>
 
                 {/* Projects List with Horizontal Scroll */}
-                <div className="w-[80%] flex justify-center items-center mx-auto">
+                <div className="w-[80%] flex justify-center items-center mx-auto mt-3">
                     <ProjectsList domain={"All"} />
                 </div>
 
@@ -138,7 +138,6 @@ const Home = () => {
                     <div className="text-xl font-semibold text-center">
                         Current Position : <span className="text-sky-300">{curPosition}</span>
                     </div>
-
                 </div>
 
                 {/* Contact heading */}
