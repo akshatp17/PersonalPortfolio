@@ -6,8 +6,7 @@ const Projects = () => {
         <>
             <div className="relative flex flex-col md:flex-row items-center gap-5 bg-transparent p-5 w-3/5 mx-auto">
                 {/* Thumbnail Section */}
-                <div className="relative z-10 w-[250px] h-[200px] bg-amber-950 rounded-xl flex items-center justify-center text-white text-lg font-semibold shadow-lg 
-  md:-mr-12 md:-ml-6">
+                <div className="relative z-10 w-[250px] h-[200px] bg-amber-950 rounded-xl flex items-center justify-center text-white text-lg font-semibold shadow-lg md:-mr-12 md:-ml-6">
                     Thumbnail
                 </div>
                 {/* Project Content Section */}

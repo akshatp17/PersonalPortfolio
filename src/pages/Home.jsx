@@ -70,8 +70,8 @@ const Home = () => {
                 </div>
 
                 {/* technology heading */}
-                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300'>
-                    <p className=''>technologies</p> <hr className='w-[65%]' />
+                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300 px-30'>
+                    <p className=''>technologies</p> <hr className='w-full' />
                 </div>
                 {/* technology */}
                 <div className='flex flex-col gap-5 p-3 items-center'>
@@ -96,8 +96,8 @@ const Home = () => {
                 </div>
 
                 {/* projects heading */}
-                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300'>
-                    <p className=''>projects</p> <hr className='w-[71%]' />
+                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300 px-30'>
+                    <p className=''>projects</p> <hr className='w-full' />
                 </div>
                 {/* Few Projects Showcase */}
                 <div>
@@ -105,17 +105,19 @@ const Home = () => {
                 </div>
 
                 {/* technology heading */}
-                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300'>
-                    <p className=''>exprecience</p> <hr className='w-[67.5%]' />
+                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300 px-30'>
+                    <p className=''>exprecience</p> <hr className='w-full' />
                 </div>
                 {/* Few Projects Showcase */}
-                <div className=''>
-
+                <div className='flex flex-col w-80% mx-auto'>
+                    <div className="w-full">
+                        Web Dev:
+                    </div>
                 </div>
 
                 {/* Contact heading */}
-                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300' id="contactForm">
-                    <p className=''>contact</p> <hr className='w-[71.5%]' />
+                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300 px-30' id="contactForm">
+                    <p className=''>contact</p> <hr className='w-full' />
                 </div>
                 {/* Contact Form */}
                 <div className=''>
