@@ -1,25 +1,30 @@
 import React from 'react'
 import { useState } from 'react'
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
 
-  const [curPage, setCurPage] = useState("Home")
+  const location = useLocation(); // Get the current route
+  const isActive = (path) => location.pathname === path ? "text-sky-300 font-bold" : "text-white";
 
   return (
     <nav className='flex justify-around py-3 text-md'>
       <div className='text-xl font-bold'>
         Armyth
       </div>
+
+      {/* Navigation Links */}
       <div className='flex gap-5'>
-        <button className={` hover:cursor-pointer`}>
+        <Link to={'/'} className={`text-lg ${isActive("/")}`}>
           Home
-        </button>
-        <button className={` hover:cursor-pointer`}>
+        </Link>
+        <Link to={'/projects'} className={`text-lg ${isActive("/projects")}`}>
           Projects
-        </button>
-        <button className={` hover:cursor-pointer`}>
+        </Link>
+        <Link to={'/about'} className={`text-lg ${isActive("/about")}`}>
           About
-        </button>
+        </Link>
       </div>
       <div className=' border-1 border-white rounded-full px-2'>
         <a href="https://github.com/akshatp17" target="_blank" rel="noopener noreferrer" className='flex justify-center items-center gap-1'>
@@ -29,7 +34,6 @@ const Navbar = () => {
           </svg>
           <span>Github</span>
         </a>
-
       </div>
     </nav>
   )

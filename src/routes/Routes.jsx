@@ -27,16 +27,24 @@ const AppRoutes = () => {
                     } />
                     <Route path="/projects" element={
                         <>
-                            <Navbar />
-                            <Projects />
-                            <Footer />
+                            <div className="flex min-h-screen flex-col">
+                                <Navbar />
+                                <div className="flex grow">
+                                    <Projects />
+                                </div>
+                                <Footer />
+                            </div>
                         </>
                     } />
                     <Route path="/about" element={
                         <>
-                            <Navbar />
-                            <AboutMe />
-                            <Footer />
+                            <div className="flex min-h-screen flex-col">
+                                <Navbar />
+                                <div className="flex grow">
+                                    <AboutMe />
+                                </div>
+                                <Footer />
+                            </div>
                         </>
                     } />
                 </Routes>
