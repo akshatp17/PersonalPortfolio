@@ -1,12 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
-
-  const location = useLocation(); // Get the current route
-  const isActive = (path) => location.pathname === path ? "text-sky-300 font-bold" : "text-white";
 
   return (
     <nav className='flex justify-between w-[80%] py-3 mx-auto text-md'>
