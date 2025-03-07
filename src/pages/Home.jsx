@@ -124,7 +124,7 @@ const Home = () => {
                 </div>
                 {/* Experience Showcase */}
                 <div className='flex flex-col w-80% mx-auto'>
-                    <div className="w-full flex gap-3">
+                    <div className="w-full flex gap-5">
                         <ExperienceCard expData={{ num: 12, numContext: "Git Repos" }} />
                         <ExperienceCard expData={{ num: 5, numContext: "projects" }} />
                         <ExperienceCard expData={{ num: 20, numContext: "hours on dev" }} />
