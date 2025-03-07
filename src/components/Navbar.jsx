@@ -9,23 +9,10 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path ? "text-sky-300 font-bold" : "text-white";
 
   return (
-    <nav className='flex justify-around py-3 text-md'>
+    <nav className='flex justify-between w-[80%] py-3 mx-auto text-md'>
       {/* Armyth Logo */}
       <div className='text-xl font-bold'>
         Armyth
-      </div>
-
-      {/* Navigation Links */}
-      <div className='flex gap-5'>
-        <Link to={'/'} className={`text-lg ${isActive("/")}`}>
-          Home
-        </Link>
-        <Link to={'/projects'} className={`text-lg ${isActive("/projects")}`}>
-          Projects
-        </Link>
-        <Link to={'/about'} className={`text-lg ${isActive("/about")}`}>
-          About
-        </Link>
       </div>
 
       {/* Github Link */}
