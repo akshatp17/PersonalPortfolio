@@ -10,6 +10,7 @@ const Navbar = () => {
 
   return (
     <nav className='flex justify-around py-3 text-md'>
+      {/* Armyth Logo */}
       <div className='text-xl font-bold'>
         Armyth
       </div>
@@ -26,6 +27,8 @@ const Navbar = () => {
           About
         </Link>
       </div>
+
+      {/* Github Link */}
       <div className=' border-1 border-white rounded-full px-2'>
         <a href="https://github.com/akshatp17" target="_blank" rel="noopener noreferrer" className='flex justify-center items-center gap-1'>
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-github">
