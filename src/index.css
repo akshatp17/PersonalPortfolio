@@ -5,12 +5,15 @@ body{
     color: white;
 }
 
-.profileImg{
-    background-image: url(./assets/profile.png);
-    width: 300px;
-    height: 300px;
-    background-size: contain;
-    border-radius: 100%;
+.profileImg {
+  background-image: url(./assets/profile.png);
+  width: 100%; /* Fills the parent container */
+  max-width: 300px; /* Prevents excessive stretching */
+  aspect-ratio: 1 / 1; /* Maintains square aspect ratio */
+  background-size: cover; /* Ensures full coverage */
+  background-position: center; /* Centers the image */
+  border-radius: 50%;
+  background-repeat: no-repeat;
 }
 
 /* This part changes the scrollbar track (the part behind the scrollbar) */

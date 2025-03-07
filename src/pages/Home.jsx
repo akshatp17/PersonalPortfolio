@@ -6,6 +6,8 @@ import { SiMongodb, SiTailwindcss, SiTypescript, SiExpress } from "react-icons/s
 import ContactForm from "../components/Contact";
 import ExperienceCard from "../components/ExperienceCard";
 import ConfirmationPopup from "../components/ConfirmationPopup";
+import Projects from "../components/Projects";
+import ProjectsList from "../components/ProjectsList";
 
 const Home = () => {
 
@@ -52,13 +54,14 @@ const Home = () => {
                     {showPopup && <ConfirmationPopup message="Message sent successfully!" onClose={() => setShowPopup(false)} />}
                 </AnimatePresence>
             }
-            <div className='flex flex-col'>
+            <div className='flex flex-col w-[80%] mx-auto'>
                 {/* Basic Profile Info and Image */}
-                <div className='flex w-full p-5 h-full'>
+                <div className='flex justify-center h-full p-5'>
                     {/* Profile Photo */}
-                    <div className='w-1/3 flex justify-end pr-2'>
-                        <div className='profileImg' />
+                    <div className="w-full md:w-1/3 flex justify-center md:justify-end pr-2">
+                        <div className="profileImg"></div>
                     </div>
+
                     {/* About me in short */}
                     <div className='w-1/2 flex flex-col gap-2 justify-center pt-2 pl-3'>
                         <p className='text-xl text-sky-300'>Hello👋, I am</p>
@@ -110,14 +113,16 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* projects heading */}
+                {/* Projects Heading */}
                 <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300 px-30'>
                     <p className=''>projects</p> <hr className='w-full' />
                 </div>
-                {/* Few Projects Showcase */}
-                <div>
 
+                {/* Projects List with Horizontal Scroll */}
+                <div className="w-[80%] flex justify-center items-center mx-auto">
+                    <ProjectsList domain={"All"} />
                 </div>
+
 
                 {/* Experience heading */}
                 <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300 px-30'>
@@ -128,7 +133,7 @@ const Home = () => {
                     <div className="w-full flex gap-5">
                         <ExperienceCard expData={{ num: 12, numContext: "Git Repos" }} />
                         <ExperienceCard expData={{ num: 5, numContext: "projects" }} />
-                        <ExperienceCard expData={{ num: 20, numContext: "hours on dev" }} />
+                        <ExperienceCard expData={{ num: 3, numContext: "months on development" }} />
                     </div>
                     <div className="text-xl font-semibold text-center">
                         Current Position : <span className="text-sky-300">{curPosition}</span>
