@@ -1,4 +1,4 @@
-import React, { lazy, useState } from "react";
+import React, { lazy, useState, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3, FaJs, FaGit, FaGithub, FaJava } from "react-icons/fa";
 import { TbBrandCpp, TbBrandCSharp } from "react-icons/tb";
@@ -35,6 +35,15 @@ const Home = () => {
 
     const [showPopup, setShowPopup] = useState(false);
     const [curPosition, setcurPosition] = useState("Open to opportunities")
+
+    const webDevRef = useRef(null);
+    const gameDevRef = useRef(null);
+
+    const scroll = (ref, direction) => {
+        if (ref.current) {
+            ref.current.scrollBy({ left: direction === "left" ? -300 : 300, behavior: "smooth" });
+        }
+    };
 
     const togglePopup = () => {
         setShowPopup(!showPopup)
@@ -126,19 +135,31 @@ const Home = () => {
                     <div className="flex flex-col w-full">
                         <p className="font-bold text-xl text-center scrollbar-hide">Web Dev Projects:</p>
                         <div className="flex items-center gap-3">
-                            <CircleChevronLeft size={35} />
-                            <ProjectsList domain={"Web Dev"} />
-                            <CircleChevronRight size={35} />
+                            <button onClick={() => scroll(webDevRef, "left")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
+                                <CircleChevronLeft size={35} />
+                            </button>
+
+                            <ProjectsList domain={"Web Dev"} scrollRef={webDevRef} />
+
+                            <button onClick={() => scroll(webDevRef, "right")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
+                                <CircleChevronRight size={35} />
+                            </button>
                         </div>
                     </div>
 
                     {/* Game Dev Projectc */}
                     <div className="flex flex-col w-full">
                         <p className="font-bold text-xl text-center scrollbar-hide">Game Dev Projects:</p>
-                        <div className="flex items-center">
-                            <CircleChevronLeft size={35} />
-                            <ProjectsList domain={"Game Dev"} />
-                            <CircleChevronRight size={35} />
+                        <div className="flex items-center gap-3">
+                            <button onClick={() => scroll(gameDevRef, "left")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
+                                <CircleChevronLeft size={35} />
+                            </button>
+
+                            <ProjectsList domain={"Game Dev"} scrollRef={gameDevRef} />
+
+                            <button onClick={() => scroll(gameDevRef, "right")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
+                                <CircleChevronRight size={35} />
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -149,7 +170,7 @@ const Home = () => {
                     <p className=''>exprecience</p> <hr className='w-full' />
                 </div>
                 {/* Experience Showcase */}
-                <div className='flex flex-col w-80% mx-auto gap-5'>
+                <div className='flex flex-col w-80% mx-auto gap-5 p-3'>
                     <div className="w-full flex gap-5">
                         <ExperienceCard expData={{ num: 12, numContext: "Git Repos" }} />
                         <ExperienceCard expData={{ num: 5, numContext: "projects" }} />
