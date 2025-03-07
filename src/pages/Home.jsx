@@ -69,8 +69,8 @@ const Home = () => {
                         <motion.button
                             onClick={scrollToContact}
                             className="px-3 py-0.5 bg-sky-300 text-black font-bold rounded-full hover:cursor-pointer w-fit"
-                            initial={{ scale: 0, rotate: 180 }}
-                            animate={{ rotate: 0, scale: 1 }}
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             transition={{
