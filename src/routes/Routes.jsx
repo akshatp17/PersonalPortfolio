@@ -6,49 +6,23 @@ import Footer from "../components/Footer";
 
 // Lazy-loaded components for better performance
 // const Login = lazy(() => import("../pages/forms/Login"));
-const Projects = lazy(() => import("../pages/Projects"))
-const AboutMe = lazy(() => import("../pages/About"))
 
 const AppRoutes = () => {
     return (
         <Router>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    <Route path="/" element={
-                        <>
-                            <div className="flex min-h-screen flex-col">
-                                <Navbar />
-                                <div className="flex grow">
-                                    <Home />
-                                </div>
-                                <Footer />
+            <Routes>
+                <Route path="/" element={
+                    <>
+                        <div className="flex min-h-screen flex-col">
+                            <Navbar />
+                            <div className="flex grow">
+                                <Home />
                             </div>
-                        </>
-                    } />
-                    <Route path="/projects" element={
-                        <>
-                            <div className="flex min-h-screen flex-col">
-                                <Navbar />
-                                <div className="flex grow">
-                                    <Projects />
-                                </div>
-                                <Footer />
-                            </div>
-                        </>
-                    } />
-                    <Route path="/about" element={
-                        <>
-                            <div className="flex min-h-screen flex-col">
-                                <Navbar />
-                                <div className="flex grow">
-                                    <AboutMe />
-                                </div>
-                                <Footer />
-                            </div>
-                        </>
-                    } />
-                </Routes>
-            </Suspense>
+                            <Footer />
+                        </div>
+                    </>
+                } />
+            </Routes>
         </Router>
     );
 };
