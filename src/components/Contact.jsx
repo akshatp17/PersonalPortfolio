@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
-const ContactForm = () => {
+const ContactForm = (props) => {
 
     const [isLoading, setIsLoading] = useState(false)
 
@@ -15,28 +15,29 @@ const ContactForm = () => {
 
     const formRef = useRef();
     const [message, setMessage] = useState("");
-
     const sendMessage = () => {
-        setIsLoading(true)
+        setIsLoading(true);
         emailjs.sendForm(
-            "service_24r8j2j",   // Replace with your actual Service ID
-            "template_hpfcpun",  // Replace with your Template ID
+            "service_24r8j2j",
+            "template_hpfcpun",
             formRef.current,
-            "hrvkCXq5o7RxX44nk"    // Replace with your Public Key
+            "hrvkCXq5o7RxX44nk"
         )
             .then(
                 (result) => {
                     setMessage("Email sent successfully!");
-                    reset(); // Reset form fields after success
-                    setIsLoading(false)
+                    reset();
+                    setIsLoading(false);
+                    props.popupFn();  // Show Popup
                 },
                 (error) => {
                     setMessage("Failed to send email. Try again.");
                     console.error(error);
-                    setIsLoading(false)
+                    setIsLoading(false);
                 }
             );
     };
+
 
     return (
         <div className="flex justify-center items-center bg-black px-4">

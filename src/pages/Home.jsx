@@ -1,10 +1,11 @@
-import React, { lazy } from "react";
-import { motion } from "framer-motion";
+import React, { lazy, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3, FaJs, FaGit, FaGithub, FaJava } from "react-icons/fa";
 import { TbBrandCpp, TbBrandCSharp } from "react-icons/tb";
 import { SiMongodb, SiTailwindcss, SiTypescript, SiExpress } from "react-icons/si";
 import ContactForm from "../components/Contact";
 import ExperienceCard from "../components/ExperienceCard";
+import ConfirmationPopup from "../components/ConfirmationPopup";
 
 const Home = () => {
 
@@ -29,6 +30,13 @@ const Home = () => {
     // Duplicate the icons for a seamless infinite scroll effect
     const duplicatedIcons = [...techIcons, ...techIcons];
 
+    const [showPopup, setShowPopup] = useState(false);
+
+    const togglePopup = () => {
+        setShowPopup(!showPopup)
+        setTimeout(() => setShowPopup(false), 3000); // Hide after 3 seconds
+    }
+
     const scrollToContact = () => {
         document.getElementById("contactForm").scrollIntoView({
             behavior: "smooth",
@@ -38,6 +46,11 @@ const Home = () => {
 
     return (
         <>
+            {
+                <AnimatePresence>
+                    {showPopup && <ConfirmationPopup message="Message sent successfully!" onClose={() => setShowPopup(false)} />}
+                </AnimatePresence>
+            }
             <div className='flex flex-col'>
                 {/* Basic Profile Info and Image */}
                 <div className='flex w-full p-5 h-full'>
@@ -124,7 +137,7 @@ const Home = () => {
                 </div>
                 {/* Contact Form */}
                 <div className=''>
-                    <ContactForm />
+                    <ContactForm popupFn={togglePopup} />
                 </div>
             </div >
         </>
