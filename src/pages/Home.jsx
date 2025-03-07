@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3, FaJs, FaGit, FaGithub, FaJava } from "react-icons/fa";
 import { TbBrandCpp, TbBrandCSharp } from "react-icons/tb";
 import { SiMongodb, SiTailwindcss, SiTypescript, SiExpress } from "react-icons/si";
+import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
 import ContactForm from "../components/Contact";
 import ExperienceCard from "../components/ExperienceCard";
 import ConfirmationPopup from "../components/ConfirmationPopup";
@@ -123,14 +124,22 @@ const Home = () => {
 
                     {/* Web Dev Projectc */}
                     <div className="flex flex-col w-full">
-                        <p className="font-bold text-xl text-center">Web Dev Projects:</p>
-                        <ProjectsList domain={"Web Dev"} />
+                        <p className="font-bold text-xl text-center scrollbar-hide">Web Dev Projects:</p>
+                        <div className="flex items-center gap-3">
+                            <CircleChevronLeft size={35} />
+                            <ProjectsList domain={"Web Dev"} />
+                            <CircleChevronRight size={35} />
+                        </div>
                     </div>
 
                     {/* Game Dev Projectc */}
                     <div className="flex flex-col w-full">
-                        <p className="font-bold text-xl text-center">Game Dev Projects:</p>
-                        <ProjectsList domain={"Game Dev"} />
+                        <p className="font-bold text-xl text-center scrollbar-hide">Game Dev Projects:</p>
+                        <div className="flex items-center">
+                            <CircleChevronLeft size={35} />
+                            <ProjectsList domain={"Game Dev"} />
+                            <CircleChevronRight size={35} />
+                        </div>
                     </div>
                 </div>
 

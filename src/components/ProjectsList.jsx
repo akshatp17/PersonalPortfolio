@@ -1,6 +1,6 @@
 import React from "react";
 import { projects } from "../data/projects";
-import Projects from "./Projects"; // ✅ Import the Project Card Component
+import Projects from "./Projects";
 
 const ProjectsList = ({ domain }) => {
     // Filter projects based on the received domain prop

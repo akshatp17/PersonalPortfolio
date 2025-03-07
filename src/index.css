@@ -31,3 +31,13 @@ body{
     width: 12px; /* Width of the vertical scrollbar */
     height: 12px; /* Height of the horizontal scrollbar */
   }
+
+  /* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
