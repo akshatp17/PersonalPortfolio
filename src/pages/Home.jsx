@@ -31,6 +31,7 @@ const Home = () => {
     const duplicatedIcons = [...techIcons, ...techIcons];
 
     const [showPopup, setShowPopup] = useState(false);
+    const [curPosition, setcurPosition] = useState("Open to opportunities")
 
     const togglePopup = () => {
         setShowPopup(!showPopup)
@@ -123,12 +124,16 @@ const Home = () => {
                     <p className=''>exprecience</p> <hr className='w-full' />
                 </div>
                 {/* Experience Showcase */}
-                <div className='flex flex-col w-80% mx-auto'>
+                <div className='flex flex-col w-80% mx-auto gap-5'>
                     <div className="w-full flex gap-5">
                         <ExperienceCard expData={{ num: 12, numContext: "Git Repos" }} />
                         <ExperienceCard expData={{ num: 5, numContext: "projects" }} />
                         <ExperienceCard expData={{ num: 20, numContext: "hours on dev" }} />
                     </div>
+                    <div className="text-xl font-semibold text-center">
+                        Current Position : <span className="text-sky-300">{curPosition}</span>
+                    </div>
+
                 </div>
 
                 {/* Contact heading */}
