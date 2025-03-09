@@ -40,8 +40,8 @@ const ContactForm = (props) => {
 
 
     return (
-        <div className="flex justify-center items-center bg-black px-4">
-            <div className="w-full max-w-lg bg-black p-8 rounded-lg">
+        <div className="flex justify-center items-center px-4">
+            <div className="w-full max-w-lg p-8 rounded-lg">
 
                 <form ref={formRef} onSubmit={handleSubmit(sendMessage)} className="space-y-4">
                     <input
