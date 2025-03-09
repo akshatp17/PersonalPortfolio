@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProjectPage from "../pages/ProjectPage";
+import BackgroundVideo from "../components/BackgroundVideo";
 
 // Lazy-loaded components for better performance
 // const Login = lazy(() => import("../pages/forms/Login"));
@@ -15,6 +16,7 @@ const AppRoutes = () => {
                 <Route path="/" element={
                     <>
                         <div className="flex min-h-screen flex-col">
+                            <BackgroundVideo />
                             <Navbar />
                             <div className="flex grow">
                                 <Home />
@@ -26,6 +28,7 @@ const AppRoutes = () => {
                 <Route path="/project" element={
                     <>
                         <div className="flex min-h-screen flex-col">
+                            <BackgroundVideo />
                             <Navbar />
                             <div className="flex grow">
                                 <ProjectPage />
