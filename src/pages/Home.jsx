@@ -157,7 +157,7 @@ const Home = () => {
                     {/* Web Dev Projects */}
                     <div className="flex flex-col w-full">
                         <p className="font-bold text-xl text-center scrollbar-hide">Web Dev Projects:</p>
-                        <div className="flex items-center gap-3 mx-auto">
+                        <div className="flex items-center gap-3">
                             {showWebNav && (
                                 <button onClick={() => scroll(webDevRef, "left")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
                                     <CircleChevronLeft size={35} />
@@ -177,7 +177,7 @@ const Home = () => {
                     {/* Game Dev Projects */}
                     <div className="flex flex-col w-full">
                         <p className="font-bold text-xl text-center scrollbar-hide">Game Dev Projects:</p>
-                        <div className="flex items-center gap-3 mx-auto">
+                        <div className="flex items-center gap-3">
                             {showGameNav && (
                                 <button onClick={() => scroll(gameDevRef, "left")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
                                     <CircleChevronLeft size={35} />
