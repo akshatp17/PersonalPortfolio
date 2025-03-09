@@ -1,4 +1,4 @@
-import React, { lazy, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3, FaJs, FaGit, FaGithub, FaJava } from "react-icons/fa";
 import { TbBrandCpp, TbBrandCSharp } from "react-icons/tb";
@@ -37,6 +37,30 @@ const Home = () => {
 
     const webDevRef = useRef(null);
     const gameDevRef = useRef(null);
+    const [showWebNav, setShowWebNav] = useState(false);
+    const [showGameNav, setShowGameNav] = useState(false);
+
+    const checkOverflow = (ref, setShowNav) => {
+        if (ref.current) {
+            setShowNav(ref.current.scrollWidth > ref.current.clientWidth);
+        }
+    };
+
+    useEffect(() => {
+        checkOverflow(webDevRef, setShowWebNav);
+        checkOverflow(gameDevRef, setShowGameNav);
+        window.addEventListener("resize", () => {
+            checkOverflow(webDevRef, setShowWebNav);
+            checkOverflow(gameDevRef, setShowGameNav);
+        });
+
+        return () => {
+            window.removeEventListener("resize", () => {
+                checkOverflow(webDevRef, setShowWebNav);
+                checkOverflow(gameDevRef, setShowGameNav);
+            });
+        };
+    }, []);
 
     const scroll = (ref, direction) => {
         if (ref.current) {
@@ -130,35 +154,43 @@ const Home = () => {
                 {/* Projects List with Horizontal Scroll */}
                 <div className="w-[80%] flex flex-col justify-center items-center mx-auto mt-3">
 
-                    {/* Web Dev Projectc */}
+                    {/* Web Dev Projects */}
                     <div className="flex flex-col w-full">
                         <p className="font-bold text-xl text-center scrollbar-hide">Web Dev Projects:</p>
-                        <div className="flex items-center gap-3">
-                            <button onClick={() => scroll(webDevRef, "left")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
-                                <CircleChevronLeft size={35} />
-                            </button>
+                        <div className="flex items-center gap-3 mx-auto">
+                            {showWebNav && (
+                                <button onClick={() => scroll(webDevRef, "left")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
+                                    <CircleChevronLeft size={35} />
+                                </button>
+                            )}
 
                             <ProjectsList domain={"Web Dev"} scrollRef={webDevRef} />
 
-                            <button onClick={() => scroll(webDevRef, "right")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
-                                <CircleChevronRight size={35} />
-                            </button>
+                            {showWebNav && (
+                                <button onClick={() => scroll(webDevRef, "right")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
+                                    <CircleChevronRight size={35} />
+                                </button>
+                            )}
                         </div>
                     </div>
 
-                    {/* Game Dev Projectc */}
+                    {/* Game Dev Projects */}
                     <div className="flex flex-col w-full">
                         <p className="font-bold text-xl text-center scrollbar-hide">Game Dev Projects:</p>
-                        <div className="flex items-center gap-3">
-                            <button onClick={() => scroll(gameDevRef, "left")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
-                                <CircleChevronLeft size={35} />
-                            </button>
+                        <div className="flex items-center gap-3 mx-auto">
+                            {showGameNav && (
+                                <button onClick={() => scroll(gameDevRef, "left")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
+                                    <CircleChevronLeft size={35} />
+                                </button>
+                            )}
 
                             <ProjectsList domain={"Game Dev"} scrollRef={gameDevRef} />
 
-                            <button onClick={() => scroll(gameDevRef, "right")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
-                                <CircleChevronRight size={35} />
-                            </button>
+                            {showGameNav && (
+                                <button onClick={() => scroll(gameDevRef, "right")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
+                                    <CircleChevronRight size={35} />
+                                </button>
+                            )}
                         </div>
                     </div>
                 </div>
