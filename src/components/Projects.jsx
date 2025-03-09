@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Projects = ({ project }) => {
     const [showInfo, setShowInfo] = useState(false);
 
-    const handleClickProject = () => {
+    const navigate = useNavigate();
 
+    const handleClickProject = () => {
+        navigate('/project');
     };
 
     return (
         <div
-            className="relative flex flex-col min-w-[250px] max-w-[300px] h-[200px] rounded-3xl p-4 bg-cover bg-center bg-no-repeat overflow-hidden"
+            className="relative flex flex-col min-w-[200px] max-w-[250px] h-[150px] rounded-3xl p-4 bg-cover bg-center bg-no-repeat overflow-hidden"
             style={{ backgroundImage: `url(${project.thumbnail})` }}
             onMouseEnter={() => setShowInfo(true)}
             onMouseLeave={() => setShowInfo(false)}
@@ -27,7 +30,7 @@ const Projects = ({ project }) => {
                         exit={{ opacity: 0, y: 50 }}  // Slide down when exiting
                         transition={{ duration: 0.3, ease: "easeOut" }}  // Smooth effect
                     >
-                        <p className="text-3xl font-bold leading-tight whitespace-normal break-words">
+                        <p className="text-2xl font-bold leading-tight whitespace-normal break-words">
                             {project.name}
                         </p>
                     </motion.div>
