@@ -7,7 +7,6 @@ import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
 import ContactForm from "../components/Contact";
 import ExperienceCard from "../components/ExperienceCard";
 import ConfirmationPopup from "../components/ConfirmationPopup";
-import Projects from "../components/Projects";
 import ProjectsList from "../components/ProjectsList";
 
 const Home = () => {
