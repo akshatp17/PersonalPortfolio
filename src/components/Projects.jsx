@@ -8,7 +8,7 @@ const Projects = ({ project }) => {
     const navigate = useNavigate();
 
     const handleClickProject = () => {
-        navigate('/project');
+        navigate('/project', { state: project });
     };
 
     return (
