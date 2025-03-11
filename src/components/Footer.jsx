@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Get in touch text */}
         <div>
           <p className='text-2xl font-bold'>
-            <span className='text-gray-400'>Get</span> in Touch.
+            Get in Touch.
           </p>
           <p className='text-gray-400'>
             So that we can talk more about...
