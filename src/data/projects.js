@@ -13,7 +13,11 @@
 export const projects = [{
     id: 0,
     name: 'Block-Carnate',
-    description: "Developed a single-player 2D platformer game in Godot. The game is a set of levels which all requires the player's out of box thinking to clear them. The game requires the player to die at a certain place to solve each puzzle of the level by instantiating an interactable block at the place of death and use it to move further ahead.",
+    description: `Developed a single-player 2D platformer in Godot as an experiment to explore game development principles, physics interactions, and level design. This project served as a hands-on learning experience, focusing on scene management, collision handling, and player mechanics within the engine.
+    
+    The development process involved working with Godot’s scripting language (GDScript) to implement core mechanics, experimenting with tilemaps, object instantiation, and physics-based interactions. Debugging and refining the mechanics provided deeper insights into game state management and optimization.
+    
+    This project was an important step in understanding Godot’s workflow, reinforcing key concepts in game logic, UI integration, and structured development practices.`,
     domain: 'Game Dev',
     tech: 'GDScript',
     thumbnail: '/projects/blockcarnate.png',
@@ -23,7 +27,13 @@ export const projects = [{
   {
     id: 1,
     name: 'Blood Bank Management',
-    description: "Developed a Frontend of a Blood Bank Management System as a first-year mini-project to streamline blood donations. The prototype allows users to check blood stock, track donors, locate nearby banks, and schedule donations, prioritizing usability and accessibility",
+    description: `Developed the frontend of a Blood Bank Management System as a first-year mini-project, aimed at streamlining blood donations and improving accessibility. The prototype provides an intuitive interface where users can:\n
+    🔹 Check blood stock availability in real-time  
+    🔹 Track donor details and their donation history  
+    🔹 Locate nearby blood banks with ease  
+    🔹 Schedule blood donations through an interactive booking system  
+
+    Built using HTML, CSS, and JavaScript, the project prioritizes usability and accessibility, ensuring a seamless experience for both donors and medical staff. This project served as a learning experience in frontend development, focusing on responsive design and user-friendly interfaces.`,
     domain: 'Web Dev',
     tech: 'HTML, CSS, JS',
     thumbnail: '/projects/bloodbank.png',
@@ -33,7 +43,9 @@ export const projects = [{
   {
     id: 2,
     name: 'Tic-Tac-Toe',
-    description: "Developed an interactive tic-tac-toe website allowing players to compete with the other players locally",
+    description: `Developed an interactive web-based Tic-Tac-Toe game in React.js, allowing players to compete locally in a classic turn-based battle of strategy. The game features a smooth and responsive interface, making it an enjoyable experience for both casual and competitive players.
+    
+    This game was built as an exploration into React.js, serving as a hands-on learning experience to understand the fundamentals of React components, hooks, and event handling.`,
     domain: 'Web Dev',
     tech: 'Reactjs',
     thumbnail: '/projects/tictactoe.png',
@@ -42,7 +54,9 @@ export const projects = [{
   },{
     id: 3,
     name: 'Scribble Golf',
-    description: "",
+    description: `Developed a single-player 2D mini-golf game in Godot, designed as a casual yet engaging experience. The game consists of 10 levels, each requiring precise aim, strategy, and a bit of luck to progress. Players must carefully navigate obstacles, avoid deceptive lava puddles, and determine the real portal hole among multiple fakes to advance. 
+    
+    This project was an exploration into the Godot engine, developed as an experiment to understand game physics, level design, and interactive mechanics.`,
     domain: 'Game Dev',
     tech: 'GDScript',
     thumbnail: '/projects/scribblegolf.jpeg',
@@ -51,7 +65,9 @@ export const projects = [{
   },{
     id: 4,
     name: 'Two-Me',
-    description: "",
+    description: `Developed a single-player 2D puzzle platformer in Godot, designed to challenge players with a unique mirrored movement mechanic. The game follows a protagonist trapped in a mysterious mirror world, where they must synchronize their movements with their mirror counterpart to reach the dimension barrier and escape. 
+    
+    This project was an exploration into the Godot engine, developed as an experiment to understand advanced game mechanics, level design, and interactive physics.`,
     domain: 'Game Dev',
     tech: 'GDScript',
     thumbnail: '/projects/twome.png',
@@ -60,7 +76,11 @@ export const projects = [{
   },{
     id: 5,
     name: 'Odd-Eve',
-    description: "",
+    description: `Developed a single-player cricket-inspired game in Python, designed as a nostalgic tribute to childhood memories. Inspired by the classic "Odd-Eve" game, this project was an early programming challenge, focusing on fundamental game development concepts.
+
+As our first-ever game development attempt, this project introduced key aspects of programming logic, user interaction, and game flow. The development process involved learning Python's event handling, conditional logic, and basic UI implementation, reinforcing essential coding skills.
+
+This project served as a stepping stone in understanding game structure, player inputs, and interactive mechanics, providing a strong foundation for future development endeavors.`,
     domain: 'Game Dev',
     tech: 'Python (Pygame)',
     thumbnail: '/projects/oddeve.png',
