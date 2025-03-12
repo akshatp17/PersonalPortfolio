@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className='flex justify-between w-[80%] py-3 mx-auto text-md'>
       {/* Armyth Logo */}
-      <div className='text-xl font-bold hover:cursor-pointer' onClick={() => { navigate("/", { replace: true }) }}>
+      <div className='text-xl font-bold hover:cursor-pointer noselect' onClick={() => { navigate("/", { replace: true }) }}>
         Armyth
       </div>
 
