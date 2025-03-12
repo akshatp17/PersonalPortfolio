@@ -8,6 +8,8 @@ import ContactForm from "../components/Contact";
 import ExperienceCard from "../components/ExperienceCard";
 import ConfirmationPopup from "../components/ConfirmationPopup";
 import ProjectsList from "../components/ProjectsList";
+import Heading from "../components/Heading";
+import ProjectSection from "../components/ProjectSection";
 
 const Home = () => {
 
@@ -89,22 +91,34 @@ const Home = () => {
             }
             <div className='flex flex-col w-[80%] mx-auto'>
                 {/* Basic Profile Info and Image */}
-                <div className='flex justify-center h-full p-5'>
+                <div className="flex flex-col md:flex-row justify-center items-center p-5 max-h-[50%]">
                     {/* Profile Photo */}
-                    <div className="w-full md:w-1/3 flex justify-center md:justify-end pr-2">
+                    <motion.div
+                        className="w-full h-full md:w-1/3 flex justify-center md:justify-end pr-2"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
                         <div className="profileImg"></div>
-                    </div>
+                    </motion.div>
 
-                    {/* About me in short */}
-                    <div className='w-1/2 flex flex-col gap-2 justify-center pt-2 pl-3'>
-                        <p className='text-xl text-sky-300'>Hello👋, I am</p>
-                        <p className='text-5xl font-bold'>Akshat Pratyush</p>
-                        <p className='text-gray-300 text-xl'>I am a <span className='font-bold text-sky-300'>Developer</span> based in India. I strive to learn and build beautiful applications through carefully crafted code and user-centric design. I am also better known as my online alias <span className='text-white font-bold'>Armyth</span>.</p>
+                    {/* About Me Section */}
+                    <motion.div
+                        className="w-full md:w-1/2 flex flex-col gap-2 justify-center pt-2 px-3 text-center md:text-left"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                    >
+                        <p className="text-xl text-sky-300">Hello👋, I am</p>
+                        <p className="text-5xl font-bold">Akshat Pratyush</p>
+                        <p className="text-gray-300 text-xl">
+                            I am a <span className="font-bold text-sky-300">Developer</span> based in India. I strive to learn and build beautiful applications through carefully crafted code and user-centric design. I am also better known as my online alias <span className="text-white font-bold">Armyth</span>.
+                        </p>
 
-                        {/* Contact me button to navigate to contact form */}
+                        {/* Contact Me Button */}
                         <motion.button
                             onClick={scrollToContact}
-                            className="px-3 py-0.5 bg-sky-300 text-black font-bold rounded-full hover:cursor-pointer w-fit"
+                            className="px-4 py-2 mt-4 bg-sky-300 text-black font-bold rounded-full hover:cursor-pointer w-fit self-center md:self-start"
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             whileHover={{ scale: 1.05 }}
@@ -117,13 +131,11 @@ const Home = () => {
                         >
                             Contact Me
                         </motion.button>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* technology heading */}
-                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300 px-30'>
-                    <p className=''>technologies</p> <hr className='w-full' />
-                </div>
+                <Heading content="technologies" />
                 {/* technology */}
                 <div className='flex flex-col gap-5 p-3 items-center'>
                     {/* technology description */}
@@ -147,62 +159,22 @@ const Home = () => {
                 </div>
 
                 {/* Projects Heading */}
-                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300 px-30'>
-                    <p className=''>projects</p> <hr className='w-full' />
-                </div>
+                <Heading content="projects" />
 
                 {/* Projects List with Horizontal Scroll */}
                 <div className="w-[80%] flex flex-col justify-center items-center mx-auto mt-3">
-
                     {/* Web Dev Projects */}
-                    <div className="flex flex-col w-full">
-                        <p className="font-bold text-xl text-center scrollbar-hide">Web Dev Projects:</p>
-                        <div className="flex items-center gap-3">
-                            {showWebNav && (
-                                <button onClick={() => scroll(webDevRef, "left")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
-                                    <CircleChevronLeft size={35} />
-                                </button>
-                            )}
-
-                            <ProjectsList domain={"Web Dev"} scrollRef={webDevRef} />
-
-                            {showWebNav && (
-                                <button onClick={() => scroll(webDevRef, "right")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
-                                    <CircleChevronRight size={35} />
-                                </button>
-                            )}
-                        </div>
-                    </div>
-
+                    <ProjectSection domain="Web Dev" showNav={showWebNav} ref={webDevRef} onScroll={scroll} />
                     {/* Game Dev Projects */}
-                    <div className="flex flex-col w-full">
-                        <p className="font-bold text-xl text-center scrollbar-hide">Game Dev Projects:</p>
-                        <div className="flex items-center gap-3">
-                            {showGameNav && (
-                                <button onClick={() => scroll(gameDevRef, "left")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
-                                    <CircleChevronLeft size={35} />
-                                </button>
-                            )}
-
-                            <ProjectsList domain={"Game Dev"} scrollRef={gameDevRef} />
-
-                            {showGameNav && (
-                                <button onClick={() => scroll(gameDevRef, "right")} className="hover:cursor-pointer hover:scale-[1.15] transition-all">
-                                    <CircleChevronRight size={35} />
-                                </button>
-                            )}
-                        </div>
-                    </div>
+                    <ProjectSection domain="Game Dev" showNav={showGameNav} ref={gameDevRef} onScroll={scroll} />
                 </div>
 
 
                 {/* Experience heading */}
-                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300 px-30'>
-                    <p className=''>exprecience</p> <hr className='w-full' />
-                </div>
+                <Heading content="experience" />
                 {/* Experience Showcase */}
                 <div className='flex flex-col w-80% mx-auto gap-5 p-3'>
-                    <div className="w-full flex gap-5">
+                    <div className="w-full flex gap-5 flex-col sm:flex-row items-center">
                         <ExperienceCard expData={{ num: 12, numContext: "Git Repos" }} />
                         <ExperienceCard expData={{ num: 5, numContext: "projects" }} />
                         <ExperienceCard expData={{ num: 3, numContext: "months on development" }} />
@@ -213,9 +185,7 @@ const Home = () => {
                 </div>
 
                 {/* Contact heading */}
-                <div className='flex items-center justify-center gap-3 text-3xl font-black text-sky-300 px-30' id="contactForm">
-                    <p className=''>contact</p> <hr className='w-full' />
-                </div>
+                <Heading content="contact" id="contactForm" />
                 {/* Contact Form */}
                 <div className=''>
                     <ContactForm popupFn={togglePopup} />
