@@ -159,7 +159,12 @@ const Home = () => {
                 {/* technology heading */}
                 <Heading content="Technologies" />
                 {/* technology */}
-                <div className='flex flex-col gap-5 p-3 items-center'>
+                <motion.div
+                    className='flex flex-col gap-5 p-3 items-center'
+                    initial={{ opacity: 0, y: 20 }} // Entrance animation (fade in & slide up)
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                     {/* technology description */}
                     <div className='flex items-center justify-center text-center w-[80%]'>
                         <p className='text-gray-300 text-xl'>I am a full-stack developer with a keen interest in building scalable and performant applications. I have experience working with a wide range of technologies and frameworks.</p>
@@ -178,7 +183,7 @@ const Home = () => {
                             ))}
                         </motion.div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Projects Heading */}
                 <Heading content="Projects" />
