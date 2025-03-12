@@ -184,7 +184,7 @@ const Home = () => {
                 <Heading content="projects" />
 
                 {/* Projects List with Horizontal Scroll */}
-                <div className="w-[80%] flex flex-col justify-center items-center mx-auto mt-3">
+                <div className="w-[90%] sm:w-[80%] flex flex-col justify-center items-center mx-auto mt-3">
                     {/* Web Dev Projects */}
                     <ProjectSection domain="Web Dev" showNav={showWebNav} ref={webDevRef} onScroll={scroll} />
                     {/* Game Dev Projects */}

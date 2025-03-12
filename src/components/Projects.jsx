@@ -30,7 +30,7 @@ const Projects = ({ project }) => {
                         exit={{ opacity: 0, y: 50 }}  // Slide down when exiting
                         transition={{ duration: 0.3, ease: "easeOut" }}  // Smooth effect
                     >
-                        <p className="text-lg sm:text-2xl font-bold leading-tight whitespace-normal break-words">
+                        <p className="text-sm sm:text-2xl font-bold leading-tight whitespace-normal break-words">
                             {project.name}
                         </p>
                     </motion.div>
