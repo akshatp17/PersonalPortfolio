@@ -116,7 +116,7 @@ const Home = () => {
                 <div className="flex flex-col md:flex-row justify-center items-center p-5 max-h-[50%]">
                     {/* Profile Photo */}
                     <motion.div
-                        className="w-full h-full md:w-1/3 flex justify-center md:justify-end pr-2"
+                        className="w-full md:w-1/3 flex justify-center md:justify-end pr-2 flex-shrink-0"
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
