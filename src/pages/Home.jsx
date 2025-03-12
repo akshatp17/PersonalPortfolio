@@ -40,6 +40,7 @@ const Home = () => {
     const [showWebNav, setShowWebNav] = useState(false);
     const [showGameNav, setShowGameNav] = useState(false);
     const [scrollSpeed, setScrollSpeed] = useState(-150); // Default speed for large screens
+    const [navScrollSpeed, setnavScrollSpeed] = useState(300); // Default speed for large screens
 
     const checkOverflow = (ref, setShowNav) => {
         if (ref.current) {
@@ -70,10 +71,13 @@ const Home = () => {
             const width = window.innerWidth;
             if (width < 640) {
                 setScrollSpeed(-400); // Faster on small screens
+                setnavScrollSpeed(100);
             } else if (width < 1024) {
                 setScrollSpeed(-200); // Medium speed on tablets
+                setnavScrollSpeed(200);
             } else {
                 setScrollSpeed(-100); // Default speed on large screens
+                setnavScrollSpeed(300);
             }
         };
 
@@ -84,7 +88,7 @@ const Home = () => {
 
     const scroll = (ref, direction) => {
         if (ref.current) {
-            ref.current.scrollBy({ left: direction === "left" ? -300 : 300, behavior: "smooth" });
+            ref.current.scrollBy({ left: direction === "left" ? -navScrollSpeed : navScrollSpeed, behavior: "smooth" });
         }
     };
 
