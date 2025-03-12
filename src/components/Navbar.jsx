@@ -1,13 +1,13 @@
 import React from 'react'
-import { useState } from 'react'
-import { motion } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
 
   return (
     <nav className='flex justify-between w-[80%] py-3 mx-auto text-md'>
       {/* Armyth Logo */}
-      <div className='text-xl font-bold'>
+      <div className='text-xl font-bold hover:cursor-pointer' onClick={() => { navigate("/", { replace: true }) }}>
         Armyth
       </div>
 
