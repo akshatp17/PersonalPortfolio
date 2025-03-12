@@ -157,7 +157,7 @@ const Home = () => {
                 </div>
 
                 {/* technology heading */}
-                <Heading content="technologies" />
+                <Heading content="Technologies" />
                 {/* technology */}
                 <div className='flex flex-col gap-5 p-3 items-center'>
                     {/* technology description */}
@@ -181,7 +181,7 @@ const Home = () => {
                 </div>
 
                 {/* Projects Heading */}
-                <Heading content="projects" />
+                <Heading content="Projects" />
 
                 {/* Projects List with Horizontal Scroll */}
                 <div className="w-[90%] sm:w-[80%] flex flex-col justify-center items-center mx-auto mt-3">
@@ -192,7 +192,7 @@ const Home = () => {
                 </div>
 
                 {/* Experience heading */}
-                <Heading content="experience" />
+                <Heading content="Experience" />
                 {/* Experience Showcase */}
                 <div className='flex flex-col w-80% mx-auto gap-5 p-3'>
                     <div className="w-full flex gap-5 flex-col sm:flex-row items-center">
@@ -206,7 +206,7 @@ const Home = () => {
                 </div>
 
                 {/* Contact heading */}
-                <Heading content="contact" id="contactForm" />
+                <Heading content="Contact" id="contactForm" />
                 {/* Contact Form */}
                 <div className=''>
                     <ContactForm popupFn={togglePopup} />
