@@ -93,7 +93,7 @@ const ProjectPage = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.7 }}
-                            className="flex flex-wrap gap-3 items-center py-5"
+                            className="flex flex-wrap gap-3 items-center py-5 justify-center lg:justify-start"
                         >
                             <p className="text-lg">Technology:</p>
                             {project.tech.split(', ').map((item, index) => (
