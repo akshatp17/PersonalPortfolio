@@ -13,7 +13,7 @@ const Projects = ({ project }) => {
 
     return (
         <div
-            className="relative flex flex-col min-w-[200px] max-w-[250px] h-[150px] rounded-3xl p-4 bg-cover bg-center bg-no-repeat overflow-hidden"
+            className="relative flex flex-col min-w-[100px] sm:min-w-[200px] max-w-[250px] h-[100px] sm:h-[150px] rounded-3xl p-4 bg-cover bg-center bg-no-repeat overflow-hidden"
             style={{ backgroundImage: `url(${project.thumbnail})` }}
             onMouseEnter={() => setShowInfo(true)}
             onMouseLeave={() => setShowInfo(false)}

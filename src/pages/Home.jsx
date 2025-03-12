@@ -3,11 +3,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3, FaJs, FaGit, FaGithub, FaJava } from "react-icons/fa";
 import { TbBrandCpp, TbBrandCSharp } from "react-icons/tb";
 import { SiMongodb, SiTailwindcss, SiTypescript, SiExpress } from "react-icons/si";
-import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
 import ContactForm from "../components/Contact";
 import ExperienceCard from "../components/ExperienceCard";
 import ConfirmationPopup from "../components/ConfirmationPopup";
-import ProjectsList from "../components/ProjectsList";
 import Heading from "../components/Heading";
 import ProjectSection from "../components/ProjectSection";
 
@@ -41,6 +39,7 @@ const Home = () => {
     const gameDevRef = useRef(null);
     const [showWebNav, setShowWebNav] = useState(false);
     const [showGameNav, setShowGameNav] = useState(false);
+    const [scrollSpeed, setScrollSpeed] = useState(-150); // Default speed for large screens
 
     const checkOverflow = (ref, setShowNav) => {
         if (ref.current) {
@@ -48,6 +47,7 @@ const Home = () => {
         }
     };
 
+    // Checking the div size to show scroll buttons
     useEffect(() => {
         checkOverflow(webDevRef, setShowWebNav);
         checkOverflow(gameDevRef, setShowGameNav);
@@ -62,6 +62,24 @@ const Home = () => {
                 checkOverflow(gameDevRef, setShowGameNav);
             });
         };
+    }, []);
+
+    // Changing the speed for technology scrolling
+    useEffect(() => {
+        const updateSpeed = () => {
+            const width = window.innerWidth;
+            if (width < 640) {
+                setScrollSpeed(-400); // Faster on small screens
+            } else if (width < 1024) {
+                setScrollSpeed(-200); // Medium speed on tablets
+            } else {
+                setScrollSpeed(-100); // Default speed on large screens
+            }
+        };
+
+        updateSpeed(); // Set initial speed
+        window.addEventListener("resize", updateSpeed);
+        return () => window.removeEventListener("resize", updateSpeed);
     }, []);
 
     const scroll = (ref, direction) => {
@@ -146,7 +164,7 @@ const Home = () => {
                     <div className="w-full max-w-4xl overflow-hidden relative">
                         <motion.div
                             className="flex gap-10 items-center flex-nowrap"
-                            animate={{ x: ["0%", "-100%"] }} // Moves the container left
+                            animate={{ x: ["0%", `${scrollSpeed}%`] }} // Moves the container left
                             transition={{ ease: "linear", duration: 30, repeat: Infinity }} // Infinite looping animation
                         >
                             {duplicatedIcons.map((icon, index) => (
@@ -168,7 +186,6 @@ const Home = () => {
                     {/* Game Dev Projects */}
                     <ProjectSection domain="Game Dev" showNav={showGameNav} ref={gameDevRef} onScroll={scroll} />
                 </div>
-
 
                 {/* Experience heading */}
                 <Heading content="experience" />
