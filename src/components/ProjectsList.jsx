@@ -4,7 +4,9 @@ import Projects from "./Projects";
 
 const ProjectsList = ({ domain, scrollRef }) => {
     // Filter projects based on the received domain prop
-    const filteredProjects = projects.filter((project) => domain === "All" || project.domain === domain);
+    const filteredProjects = projects
+        .filter((project) => domain === "All" || project.domain === domain)
+        .sort((a, b) => b.id - a.id); // Sorting in descending order by ID
 
     return (
         <div ref={scrollRef} className="w-full overflow-x-auto whitespace-nowrap py-4 scrollbar-hide">
