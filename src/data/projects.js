@@ -110,6 +110,23 @@ export const projects = [
   },
   {
     id: 7,
+    name: "CalibreCops",
+    description: `Developed CalibreCops, a comprehensive cyber security suite that acts as a proactive layer of protection for users, ensuring a safer online experience. The platform offers a range of tools and features designed to protect against various cyber threats:
+  
+    🔹 Detects if an email or password has been breached by scanning against known databases of leaked credentials from the dark web
+    🔹 Alerts users immediately if a breach is detected, helping them change compromised passwords before they can be misused
+    🔹 Identifies phishing emails and malicious URLs to prevent users from falling victim to scams, protecting sensitive data like login credentials and banking information
+    🔹 Chrome extension provides real-time protection by automatically analyzing URLs in the current tab and warning users about unsafe or phishing sites
+    🔹 Safeguards users' sensitive information and ensures safe browsing, so they can navigate the web with confidence
+  
+    Built with a focus on user security and ease of use, CalibreCops helps users stay ahead of cyber threats, providing peace of mind while online.`,
+    domain: "Web Dev",
+    tech: "Reactjs, Nodejs, Express, MongoDB, Chrome Extensions API, Third-Party breach check APIs",
+    thumbnail: "/projects/CalibreCops.jpeg",
+    github: "https://github.com/akshatp17/CalibreCops",
+  },
+  {
+    id: 8,
     name: "MediPal",
     description: `Developed MediPal, a healthcare platform designed to bridge the gap between patients and medical professionals. The application offers a seamless and secure experience where users can:
 
