@@ -37,8 +37,10 @@ const Home = () => {
 
     const webDevRef = useRef(null);
     const gameDevRef = useRef(null);
+    const experienceRef = useRef(null);
     const [showWebNav, setShowWebNav] = useState(false);
     const [showGameNav, setShowGameNav] = useState(false);
+    const [showExperienceNav, setShowExperienceNav] = useState(false)
     const [scrollSpeed, setScrollSpeed] = useState(-150); // Default speed for large screens
     const [navScrollSpeed, setnavScrollSpeed] = useState(300); // Default speed for large screens
 
@@ -52,18 +54,18 @@ const Home = () => {
     useEffect(() => {
         checkOverflow(webDevRef, setShowWebNav);
         checkOverflow(gameDevRef, setShowGameNav);
-        window.addEventListener("resize", () => {
+        checkOverflow(experienceRef, setShowExperienceNav); // 👈 Add this
+
+        const handleResize = () => {
             checkOverflow(webDevRef, setShowWebNav);
             checkOverflow(gameDevRef, setShowGameNav);
-        });
+            checkOverflow(experienceRef, setShowExperienceNav); // 👈 Add this
+        }
 
-        return () => {
-            window.removeEventListener("resize", () => {
-                checkOverflow(webDevRef, setShowWebNav);
-                checkOverflow(gameDevRef, setShowGameNav);
-            });
-        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
+
 
     // Changing the speed for technology scrolling
     useEffect(() => {
@@ -118,7 +120,8 @@ const Home = () => {
                     <motion.div
                         className="w-full md:w-1/3 flex justify-center md:justify-end pr-2 flex-shrink-0"
                         initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <div className="profileImg"></div>
@@ -128,7 +131,8 @@ const Home = () => {
                     <motion.div
                         className="w-full md:w-1/2 flex flex-col gap-2 justify-center pt-2 px-3 text-center md:text-left"
                         initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
                     >
                         <p className="text-xl text-sky-300">Hello👋, I am</p>
@@ -156,13 +160,14 @@ const Home = () => {
                     </motion.div>
                 </div>
 
-                {/* technology heading */}
+                {/*Technology heading */}
                 <Heading content="Technologies" />
                 {/* technology */}
                 <motion.div
                     className='flex flex-col gap-5 p-3 items-center'
-                    initial={{ opacity: 0, y: 20 }} // Entrance animation (fade in & slide up)
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     {/* technology description */}
@@ -185,37 +190,62 @@ const Home = () => {
                     </div>
                 </motion.div>
 
+                {/*Experience experience heading*/}
+                <Heading content="Experience" />
+                {/* Experience Showcase */}
+                <motion.div
+                    className="w-[90%] sm:w-[80%] flex flex-col justify-center items-center mx-auto mt-3"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                    <ExperienceCard
+                        showNav={showExperienceNav}
+                        ref={experienceRef}
+                        onScroll={scroll}
+                    />
+                </motion.div>
+
+
                 {/* Projects Heading */}
                 <Heading content="Projects" />
-
                 {/* Projects List with Horizontal Scroll */}
                 <div className="w-[90%] sm:w-[80%] flex flex-col justify-center items-center mx-auto mt-3">
                     {/* Web Dev Projects */}
-                    <ProjectSection domain="Web Dev" showNav={showWebNav} ref={webDevRef} onScroll={scroll} />
-                    {/* Game Dev Projects */}
-                    <ProjectSection domain="Game Dev" showNav={showGameNav} ref={gameDevRef} onScroll={scroll} />
-                </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="w-full"
+                    >
+                        <ProjectSection domain="Web Dev" showNav={showWebNav} ref={webDevRef} onScroll={scroll} />
+                    </motion.div>
 
-                {/* Experience heading */}
-                <Heading content="Experience" />
-                {/* Experience Showcase */}
-                <div className='flex flex-col w-80% mx-auto gap-5 p-3'>
-                    <div className="w-full flex gap-5 flex-col sm:flex-row items-center">
-                        <ExperienceCard expData={{ num: 12, numContext: "Git Repos" }} />
-                        <ExperienceCard expData={{ num: 5, numContext: "projects" }} />
-                        <ExperienceCard expData={{ num: 3, numContext: "months on development" }} />
-                    </div>
-                    <div className="text-xl font-semibold text-center">
-                        Current Position : <span className="text-sky-300">{curPosition}</span>
-                    </div>
+                    {/* Game Dev Projects */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+                        className="w-full"
+                    >
+                        <ProjectSection domain="Game Dev" showNav={showGameNav} ref={gameDevRef} onScroll={scroll} />
+                    </motion.div>
                 </div>
 
                 {/* Contact heading */}
                 <Heading content="Contact" id="contactForm" />
                 {/* Contact Form */}
-                <div className=''>
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                     <ContactForm popupFn={togglePopup} />
-                </div>
+                </motion.div>
             </div >
         </>
     )
