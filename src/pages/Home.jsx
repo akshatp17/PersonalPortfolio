@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3, FaJs, FaGit, FaGithub, FaJava } from "react-icons/fa";
 import { TbBrandCpp, TbBrandCSharp } from "react-icons/tb";
 import { SiMongodb, SiTailwindcss, SiTypescript, SiExpress } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
 import ContactForm from "../components/Contact";
 import ExperienceCard from "../components/ExperienceCard";
 import ConfirmationPopup from "../components/ConfirmationPopup";
@@ -27,6 +28,7 @@ const Home = () => {
         <TbBrandCpp className="text-5xl" />,
         <TbBrandCSharp className="text-5xl" />,
         <FaJava className="text-5xl" />,
+        <TbBrandReactNative className="text-5xl" />,
     ];
 
     // Duplicate the icons for a seamless infinite scroll effect
