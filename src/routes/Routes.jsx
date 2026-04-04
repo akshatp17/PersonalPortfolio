@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProjectPage from "../pages/ProjectPage";
 import BackgroundVideo from "../components/BackgroundVideo";
+import CursorGlow from "../components/CursorGlow";
 
 // Lazy-loaded components for better performance
 // const Login = lazy(() => import("../pages/forms/Login"));
@@ -12,6 +13,7 @@ import BackgroundVideo from "../components/BackgroundVideo";
 const AppRoutes = () => {
     return (
         <Router>
+            <CursorGlow />
             <Routes>
                 <Route path="/" element={
                     <>

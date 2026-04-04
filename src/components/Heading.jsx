@@ -12,6 +12,7 @@ const Heading = (props) => {
         >
             {/* Heading Text */}
             <motion.p
+                className="whitespace-nowrap flex-shrink-0"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
